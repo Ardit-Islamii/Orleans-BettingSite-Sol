@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orleans-BettingSite-Silo", "Orleans-BettingSite\Orleans-BettingSite-Silo.csproj", "{412215D7-5090-4CE5-8239-3A94C2D9A47F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orleans-BettingSite-Client", "Orleans-BettingSite-Client\Orleans-BettingSite-Client.csproj", "{62F3AD3C-A551-4828-A311-A53AACE75987}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{412215D7-5090-4CE5-8239-3A94C2D9A47F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412215D7-5090-4CE5-8239-3A94C2D9A47F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412215D7-5090-4CE5-8239-3A94C2D9A47F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412215D7-5090-4CE5-8239-3A94C2D9A47F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62F3AD3C-A551-4828-A311-A53AACE75987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62F3AD3C-A551-4828-A311-A53AACE75987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62F3AD3C-A551-4828-A311-A53AACE75987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62F3AD3C-A551-4828-A311-A53AACE75987}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC09D21C-24C0-4384-B704-3CA9814DC2C9}
+	EndGlobalSection
+EndGlobal
