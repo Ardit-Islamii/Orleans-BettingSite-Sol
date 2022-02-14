@@ -1,4 +1,4 @@
-﻿namespace Orleans_BettingSite.Requests
+﻿namespace Orleans_BettingSite_Common.Requests
 {
     public class BetCreateRequest
     {

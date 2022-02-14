@@ -1,6 +1,6 @@
 ﻿using Orleans;
 
-namespace Orleans_BettingSite.Interfaces
+namespace Orleans_BettingSite_Common.GrainInterfaces
 {
     public interface ITest : IGrainObserver
     {

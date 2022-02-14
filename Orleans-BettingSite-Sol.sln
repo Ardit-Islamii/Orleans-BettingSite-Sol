@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orleans-BettingSite-Silo", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orleans-BettingSite-Client", "Orleans-BettingSite-Client\Orleans-BettingSite-Client.csproj", "{62F3AD3C-A551-4828-A311-A53AACE75987}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orleans-BettingSite-Common", "Orleans-BettingSite-Common\Orleans-BettingSite-Common.csproj", "{4FF54161-0C11-4890-9627-40206B1BBD1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{62F3AD3C-A551-4828-A311-A53AACE75987}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62F3AD3C-A551-4828-A311-A53AACE75987}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62F3AD3C-A551-4828-A311-A53AACE75987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FF54161-0C11-4890-9627-40206B1BBD1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FF54161-0C11-4890-9627-40206B1BBD1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FF54161-0C11-4890-9627-40206B1BBD1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FF54161-0C11-4890-9627-40206B1BBD1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

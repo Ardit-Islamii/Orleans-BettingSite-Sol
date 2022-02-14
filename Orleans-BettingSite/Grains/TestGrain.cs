@@ -1,6 +1,6 @@
 ﻿using Orleans;
-using Orleans_BettingSite.Interfaces;
 using Orleans_BettingSite.ObserverManager;
+using Orleans_BettingSite_Common.GrainInterfaces;
 
 namespace Orleans_BettingSite.Grains
 {

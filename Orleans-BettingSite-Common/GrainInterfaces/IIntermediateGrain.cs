@@ -1,8 +1,8 @@
 ﻿using Orleans;
 using Orleans_BettingSite.Requests;
-using Orleans_BettingSite.Responses;
+using Orleans_BettingSite_Common.Responses;
 
-namespace Orleans_BettingSite.Interfaces
+namespace Orleans_BettingSite_Common.GrainInterfaces
 {
     public interface IIntermediateGrain : IGrainWithGuidKey
     {

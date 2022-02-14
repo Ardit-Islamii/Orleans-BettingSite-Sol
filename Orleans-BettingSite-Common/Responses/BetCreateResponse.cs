@@ -1,4 +1,4 @@
-﻿namespace Orleans_BettingSite.Responses
+﻿namespace Orleans_BettingSite_Common.Responses
 {
     public class BetCreateResponse
     {

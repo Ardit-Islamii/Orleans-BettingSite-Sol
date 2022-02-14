@@ -1,12 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <RootNamespace>Orleans_BettingSite_Common</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>Orleans_BettingSite</RootNamespace>
-    <UserSecretsId>4e552d39-132b-41cc-9452-d9792e5943bf</UserSecretsId>
-    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,13 +22,7 @@
     <PackageReference Include="Microsoft.Orleans.Persistence.AdoNet" Version="3.6.0" />
     <PackageReference Include="Microsoft.Orleans.Runtime.Abstractions" Version="3.6.0" />
     <PackageReference Include="Microsoft.Orleans.Server" Version="3.6.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
     <PackageReference Include="Npgsql" Version="6.0.3" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Orleans-BettingSite-Common\Orleans-BettingSite-Common.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿using Orleans_BettingSite.Interfaces;
+﻿using Orleans_BettingSite_Common.GrainInterfaces;
 
 namespace Orleans_BettingSite.ObserverClasses
 {

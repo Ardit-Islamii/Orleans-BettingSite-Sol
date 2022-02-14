@@ -4,8 +4,8 @@ using Orleans.Providers;
 using Orleans.Runtime;
 using Orleans.Streams;
 using Orleans_BettingSite.Events;
-using Orleans_BettingSite.Interfaces;
 using Orleans_BettingSite.States;
+using Orleans_BettingSite_Common.GrainInterfaces;
 
 namespace Orleans_BettingSite.Grains
 {

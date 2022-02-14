@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Orleans;
-using Orleans_BettingSite.Interfaces;
 using Orleans_BettingSite.Requests;
+using Orleans_BettingSite_Common.GrainInterfaces;
 
 namespace Orleans_BettingSite_Client.Controllers
 {
