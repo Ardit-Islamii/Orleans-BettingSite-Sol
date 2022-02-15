@@ -36,30 +36,5 @@ namespace Orleans_BettingSite.Controllers
             var result = await intermediateGrain.SetBetAmountAsync(betRequest.Amount);
             return Ok(result);
         }
-
-        [HttpPost("subscribe/{id}")]
-        public async Task SubscribeToTestObserverAsync(Guid id)
-        {
-            var testGrain = _factory.GetGrain<ITestGrain>(id);
-            var obj = await _factory.CreateObjectReference<ITest>(test);
-
-            await testGrain.Subscribe(obj);
-        }
-
-        [HttpPost("unsubscribe/{id}")]
-        public async Task UnsubscribeToTestObserverAsync(Guid id)
-        {
-            var testGrain = _factory.GetGrain<ITestGrain>(id);
-            var obj = await _factory.CreateObjectReference<ITest>(test);
-
-            await testGrain.UnSubscribe(obj);
-        }
-
-        [HttpPost("sendmessage/{id}")]
-        public async Task SendMessageAsync(Guid id, [FromBody] string message)
-        {
-            var testGrain = _factory.GetGrain<ITestGrain>(id);
-            await testGrain.SendMessage(message);
-        }
     }
 }

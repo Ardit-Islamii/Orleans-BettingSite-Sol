@@ -7,6 +7,7 @@ namespace Orleans_BettingSite.Grains
     public class TestGrain : Grain, ITestGrain
     {
         private readonly ObserverManager<ITest> _subsManager;
+        private ITest _observer;
         public TestGrain(ILogger<TestGrain> logger)
         {
             _subsManager = new ObserverManager<ITest>(TimeSpan.FromMinutes(5), logger, "subs");
@@ -14,13 +15,18 @@ namespace Orleans_BettingSite.Grains
 
         public Task Subscribe(ITest observer)
         {
+            _observer = observer;
             _subsManager.Subscribe(observer, observer);
             return Task.CompletedTask;
         }
 
-        public Task UnSubscribe(ITest observer)
+        public Task UnSubscribe()
         {
-            _subsManager.Unsubscribe(observer);
+            if (_observer is not null)
+            {
+                _subsManager.Unsubscribe(_observer);
+                return Task.CompletedTask;
+            }
             return Task.CompletedTask;
         }
 
