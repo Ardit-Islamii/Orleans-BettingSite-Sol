@@ -6,7 +6,7 @@ namespace Orleans_BettingSite.ObserverClasses
     {
         public void ReceiveMessage(string message)
         {
-            Console.WriteLine($"Successfully received message: {message}");
+            Console.WriteLine(message);
         }
     }
 }
