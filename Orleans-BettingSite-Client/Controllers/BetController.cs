@@ -4,15 +4,17 @@ using Orleans;
 using Orleans_BettingSite.ObserverClasses;
 using Orleans_BettingSite.Requests;
 using Orleans_BettingSite_Common.GrainInterfaces;
+using Orleans_BettingSite_Common.Requests;
+using Orleans_BettingSite_Common.Responses;
 
 namespace Orleans_BettingSite_Client.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TestController : ControllerBase
+    public class BetController : ControllerBase
     {
         private readonly IClusterClient _client;
-        public TestController(IClusterClient client)
+        public BetController(IClusterClient client)
         {
             _client = client;
         }
@@ -23,6 +25,14 @@ namespace Orleans_BettingSite_Client.Controllers
             var betGrain = _client.GetGrain<IIntermediateGrain>(id);
             var test = await betGrain.GetBetAsync(id);
             return Ok(test);
+        }
+
+        [HttpPost("{id}")]
+        public async Task<ActionResult<BetCreateResponse>> CreateBetAsync(Guid id, [FromBody] BetCreateRequest betRequest)
+        {
+            var intermediateGrain = _client.GetGrain<IIntermediateGrain>(id);
+            var result = await intermediateGrain.SetBetAmountAsync(betRequest.Amount);
+            return Ok(result);
         }
 
         [HttpPost("subscribe/{id}")]
