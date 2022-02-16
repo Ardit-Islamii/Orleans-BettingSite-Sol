@@ -47,9 +47,9 @@ namespace Orleans_BettingSite.Grains
             logger.Info("OnErrorAsync({0})", ex);
             return Task.CompletedTask;
         }
-        public Task<decimal> GetBetAmount()
+        public async Task<decimal> GetBetAmountAsync()
         {
-            return Task.FromResult(_amount.State.Amount);
+            return await Task.FromResult(_amount.State.Amount);
         }
         public async Task<decimal> SetBetAmountAsync(decimal amount)
         {

@@ -33,4 +33,9 @@
     <ProjectReference Include="..\Orleans-BettingSite\Orleans-BettingSite-Silo.csproj" />
   </ItemGroup>
 
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+	</PropertyGroup>
+
 </Project>

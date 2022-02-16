@@ -1,3 +1,5 @@
+using System.Reflection;
+using Microsoft.OpenApi.Models;
 using Orleans;
 using Orleans_BettingSite_Client.ClientConfiguration;
 
@@ -12,6 +14,21 @@ builder.Services.AddSingleton<IHostedService>(sp => sp.GetService<ClusterClientH
 builder.Services.AddSingleton<IClusterClient>(sp => sp.GetService<ClusterClientHostedService>().Client);
 
 builder.Services.AddSingleton<IGrainFactory>(sp => sp.GetService<ClusterClientHostedService>().Client);
+
+//Swagger configuration
+builder.Services.AddSwaggerGen(cfg =>
+{
+    cfg.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Swagger API",
+        Description = "Bet API crud",
+        Version = "v1"
+    });
+    var fileName = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var filePath = Path.Combine(AppContext.BaseDirectory, fileName);
+    cfg.IncludeXmlComments(filePath);
+});
+
 
 builder.Services.AddControllers();
 
