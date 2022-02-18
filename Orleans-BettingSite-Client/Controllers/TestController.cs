@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Orleans;
 using Orleans_BettingSite.ObserverClasses;
 using Orleans_BettingSite_Common.GrainInterfaces;

@@ -1,5 +1,6 @@
 ﻿using Orleans;
 using Orleans.Streams;
+using Orleans_BettingSite.Events;
 using Orleans_BettingSite.Requests;
 using Orleans_BettingSite_Common.GrainInterfaces;
 using Orleans_BettingSite_Common.Responses;
@@ -9,12 +10,12 @@ namespace Orleans_BettingSite.Grains
     public class IntermediateGrain : Grain, IIntermediateGrain
     {
         private IBetGrain currentBet;
-        private IAsyncStream<BetMessage> stream;
+        private IAsyncStream<BetEvent> stream;
 
         public override Task OnActivateAsync()
         {
             var streamProvider = GetStreamProvider("bet");
-            stream = streamProvider.GetStream<BetMessage>(this.GetPrimaryKey(), "default");
+            stream = streamProvider.GetStream<BetEvent>(this.GetPrimaryKey(), "default");
             currentBet = GrainFactory.GetGrain<IBetGrain>(this.GetPrimaryKey());
             return base.OnActivateAsync();
         }
@@ -33,7 +34,7 @@ namespace Orleans_BettingSite.Grains
 
         public async Task<BetCreateResponse> SetBetAmountAsync(decimal amount)
         {
-            await stream.OnNextAsync(new BetMessage(amount, "setBetAmountAsync"));
+            await stream.OnNextAsync(new BetEvent(amount, "setBetAmountAsync"));
             var returnedResult = new BetCreateResponse()
             {
                 Amount = amount,
