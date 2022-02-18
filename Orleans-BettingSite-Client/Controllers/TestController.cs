@@ -55,12 +55,5 @@ namespace Orleans_BettingSite_Client.Controllers
             var testGrain = _client.GetGrain<ITestGrain>(id);
             await testGrain.SendMessage(message);
         }
-
-        [HttpPost("getcount/{id}")]
-        public async Task<int> SendMessageAsync(Guid id)
-        {
-            var testGrain = _client.GetGrain<ITestGrain>(id);
-            return await testGrain.GetObserversCount();
-        }
     }
 }

@@ -47,10 +47,5 @@ namespace Orleans_BettingSite.Grains
             _subsManager.Notify(x => x.ReceiveMessage($"TestGrain with id: {this.GetPrimaryKey()} sends their regards: {message}"));
             return Task.CompletedTask;
         }
-
-        public async Task<int> GetObserversCount()
-        {
-            return await Task.FromResult(_subsManager.Count());
-        }
     }
 }

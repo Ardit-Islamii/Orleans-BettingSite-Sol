@@ -7,6 +7,5 @@ namespace Orleans_BettingSite_Common.GrainInterfaces
         Task Subscribe(ITest observer);
         Task UnSubscribe();
         Task SendMessage(string message);
-        Task<int> GetObserversCount();
     }
 }
