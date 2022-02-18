@@ -14,10 +14,7 @@ namespace Orleans_BettingSite.Grains
     [ImplicitStreamSubscription("default")]
     public class BetGrain : JournaledGrain<AmountState, BetMessage>, IBetGrain
     {
-        private IAsyncObservable<BetMessage> consumer;
         internal ILogger logger;
-        private StreamSubscriptionHandle<BetMessage> consumerHandle;
-
         private readonly IPersistentState<AmountState> _amount;
 
         public BetGrain([PersistentState("amount", "amountStore")] IPersistentState<AmountState> amount, ILoggerFactory loggerFactory)
