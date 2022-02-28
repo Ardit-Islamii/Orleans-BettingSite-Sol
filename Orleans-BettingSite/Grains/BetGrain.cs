@@ -22,32 +22,38 @@ namespace Orleans_BettingSite.Grains
             _amount = amount;
             logger = loggerFactory.CreateLogger($"{this.GetType().Name}-{this.IdentityString}");
         }
+
         public override async Task OnActivateAsync()
         {
             var streamProvider = GetStreamProvider("bet");
             var stream = streamProvider.GetStream<BetEvent>(this.GetPrimaryKey(), "default");
             await stream.SubscribeAsync(OnNextAsync, OnErrorAsync, OnCompletedAsync);
         }
+
         public async Task OnNextAsync(BetEvent item, StreamSequenceToken token = null)
         {
             logger.Info("OnNextAsync({0}{1})", item, token != null ? token.ToString() : "null");
             await SetBetAmountAsync(item.Amount);
             await Task.CompletedTask;
         }
+
         public Task OnCompletedAsync()
         {
             logger.Info("OnCompletedAsync()");
             return Task.CompletedTask;
         }
+
         public Task OnErrorAsync(Exception ex)
         {
             logger.Info("OnErrorAsync({0})", ex);
             return Task.CompletedTask;
         }
+
         public async Task<decimal> GetBetAmountAsync()
         {
             return await Task.FromResult(_amount.State.Amount);
         }
+
         public async Task<decimal> SetBetAmountAsync(decimal amount)
         {
             _amount.State.Amount = amount;
@@ -58,6 +64,11 @@ namespace Orleans_BettingSite.Grains
 
             logger.LogInformation("Changed the bet amount of bet with id:{1} to {2}", this.GetPrimaryKey(), amount);
             return await Task.FromResult(_amount.State.Amount);
+        }
+
+        public new virtual IGrainFactory GrainFactory
+        {
+            get { return base.GrainFactory; }
         }
     }
 }
